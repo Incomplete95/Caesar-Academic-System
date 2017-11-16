@@ -13,6 +13,9 @@ public class Constants {
     static final String ALL = "*";
     static final String SINGLE_QUOTE = "'";
     static final String EQUAL = "=";
+    static final String TABLE_SIGN_WITH_SPACES = " \t ";
+    static final String AND = " and ";
+    // static final String OR = " or ";
 
     // Constants for Connection
     static final String DRIVER = "com.mysql.jdbc.Driver";

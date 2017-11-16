@@ -211,8 +211,7 @@ public class SQLDriver {
         try {
             Statement statement = user.createStatement();
             String Id = user.getId();
-            String genTranscriptsQuery =
-                    Constants.SELECT +
+            String genTranscriptsQuery = Constants.SELECT +
                     "UoSCode, Grade" +
                     Constants.FROM +
                     "transcript" +
@@ -256,7 +255,170 @@ public class SQLDriver {
         System.out.print("Please input the course ID you want to view(Caution: Case sensitive):");
         Scanner scanner = new Scanner( System.in );
         String courseId = scanner.nextLine().trim();
-        
+        String checkValidQuery = Constants.SELECT +
+                Constants.ALL +
+                Constants.FROM +
+                "transcript" +
+                Constants.WHERE +
+                "StudId" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                user.getId() +
+                Constants.SINGLE_QUOTE +
+                Constants.AND +
+                "UoSCode" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                courseId +
+                Constants.SINGLE_QUOTE;
+        Statement statement = null;
+        while (true) {
+            try {
+                statement = user.createStatement();
+                ResultSet resultSet = statement.executeQuery(checkValidQuery);
+                if (!resultSet.next()) {
+                    System.out.println("Cannot find records for your course ID, \n" +
+                            "please check if the ID is valid and type the correct one again");
+                } else {
+                    break;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        String transcriptInfoQuery = Constants.SELECT +
+                "Semester, Year, Grade" +
+                Constants.FROM +
+                "transcript" +
+                Constants.WHERE +
+                "studId" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                user.getId() +
+                Constants.SINGLE_QUOTE +
+                Constants.AND +
+                "UoSCode" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                courseId +
+                Constants.SINGLE_QUOTE;
+        String semester = null, year = null, grade = null;
+        try {
+            statement = user.createStatement();
+            ResultSet resultSet = statement.executeQuery(transcriptInfoQuery);
+            while(resultSet.next()) {
+                semester = resultSet.getString("Semester");
+                year = resultSet.getString("Year");
+                grade = resultSet.getString("Grade");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String courseInfoQuery = Constants.SELECT +
+                "Enrollment, MaxEnrollment, InstructorId" +
+                Constants.FROM +
+                "uosoffering" +
+                Constants.WHERE +
+                "UoSCode" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                courseId +
+                Constants.SINGLE_QUOTE +
+                Constants.AND +
+                "Semester" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                semester +
+                Constants.SINGLE_QUOTE +
+                Constants.AND +
+                "Year" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                year +
+                Constants.SINGLE_QUOTE;
+        String maxEnroll = null, enroll = null, instructorId = null;
+        try {
+            statement = user.createStatement();
+            ResultSet resultSet = statement.executeQuery(courseInfoQuery);
+            while(resultSet.next()) {
+                maxEnroll = resultSet.getString("MaxEnrollment");
+                enroll = resultSet.getString("Enrollment");
+                instructorId = resultSet.getString("InstructorId");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String courseNameQuery = Constants.SELECT +
+                "UoSName" +
+                Constants.FROM +
+                "unitofstudy" +
+                Constants.WHERE +
+                "UoSCode" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                courseId +
+                Constants.SINGLE_QUOTE;
+        String courseName = null;
+        try {
+            statement = user.createStatement();
+            ResultSet resultSet = statement.executeQuery(courseNameQuery);
+            while(resultSet.next()) {
+                courseName = resultSet.getString("UoSName");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String instructorNameQuery = Constants.SELECT +
+                "Name" +
+                Constants.FROM +
+                "faculty" +
+                Constants.WHERE +
+                "Id" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                instructorId +
+                Constants.SINGLE_QUOTE;
+        String instructorName = null;
+        try {
+            statement = user.createStatement();
+            ResultSet resultSet = statement.executeQuery(instructorNameQuery);
+            while(resultSet.next()) {
+                instructorName = resultSet.getString("Name");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("The course information:");
+        System.out.println("Course Id" +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                "Course Name" +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                "Year" +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                "Quarter" +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                "Students Enrolled" +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                "Max Enroll" +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                "Lecturer Name" +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                "Grade");
+        System.out.println(courseId +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                courseName +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                year +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                semester +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                enroll +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                maxEnroll +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                instructorName +
+                Constants.TABLE_SIGN_WITH_SPACES +
+                grade);
     }
 
     /**
