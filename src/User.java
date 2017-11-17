@@ -96,7 +96,17 @@ public class User {
      *
      */
     public void changeInfo(String newInfo, String infoToChange) {
-
+        String query = "update student set " + infoToChange + " = ? where Id = ?";
+        System.out.println(query);
+        try {
+            PreparedStatement preparedStmt = this.con.prepareStatement(query);
+            preparedStmt.setString   (1, newInfo);
+            preparedStmt.setString(2, this.getId());
+            preparedStmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        completeInit();
     }
 
     /**

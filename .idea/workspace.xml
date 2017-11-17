@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c89254c-86b9-4192-b39a-71a4bf97e6e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/Constants.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/SQLDriver.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/SQLDriver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/User.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database-Project.iml" afterPath="$PROJECT_DIR$/Database-Project.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Constants.java" afterPath="$PROJECT_DIR$/src/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQLDriver.java" afterPath="$PROJECT_DIR$/src/SQLDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User.java" afterPath="$PROJECT_DIR$/src/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,22 +20,49 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SQLDriver.java" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SQLDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-212">
-              <caret line="397" column="27" lean-forward="true" selection-start-line="397" selection-start-column="27" selection-end-line="397" selection-end-column="27" />
+              <caret line="468" column="64" lean-forward="false" selection-start-line="468" selection-start-column="64" selection-end-line="468" selection-end-column="64" />
               <folding>
-                <marker date="1510852248000" expanded="true" signature="2322:2406" ph="select * fro... student" />
-                <marker date="1510852248000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
-                <marker date="1510852248000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
-                <marker date="1510852248000" expanded="true" signature="10428:10781" ph="select Semes... " />
-                <marker date="1510852248000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
-                <marker date="1510852248000" expanded="true" signature="11502:11854" ph="select Semes... " />
-                <marker date="1510852248000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
-                <marker date="1510852248000" expanded="true" signature="13518:13640" ph="select Name faculty" />
+                <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
+                <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
+                <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
+                <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
+                <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
+                <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
+                <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
+                <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
+                <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
+                <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
+                <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
+                <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
+                <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
+                <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
+                <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Enroll_Procedure.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Enroll_Procedure.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1080">
+              <caret line="72" column="62" lean-forward="true" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Withdraw_Procedure.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Withdraw_Procedure.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,8 +80,8 @@
       <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="46" />
+            <state relative-caret-position="300">
+              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -61,16 +90,31 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1147">
-              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="1395">
+              <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
               <folding>
-                <marker date="1510780195000" expanded="true" signature="1472:1548" ph="select * fro... student" />
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#3892#3893#0" expanded="false" />
+                <element signature="e#3924#3925#0" expanded="false" />
+                <element signature="e#4049#4050#0" expanded="false" />
+                <element signature="e#4079#4080#0" expanded="false" />
+                <marker date="1510871082000" expanded="true" signature="1472:1548" ph="select * fro... student" />
+                <marker date="1510871082000" expanded="true" signature="3076:3094" ph="update stude... " />
+                <marker date="1510871082000" expanded="true" signature="3076:3095" ph="update stude... " />
+                <marker date="1510871082000" expanded="true" signature="3076:3132" ph="update stude... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>scanner</find>
+      <find>update</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,8 +127,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/User.java" />
         <option value="$PROJECT_DIR$/src/Constants.java" />
         <option value="$PROJECT_DIR$/src/SQLDriver.java" />
+        <option value="$PROJECT_DIR$/src/Enroll_Procedure.txt" />
       </list>
     </option>
   </component>
@@ -116,7 +162,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -145,7 +191,20 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -420,6 +479,7 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -589,6 +649,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -653,6 +719,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5c89254c-86b9-4192-b39a-71a4bf97e6e5" name="Default" comment="" />
@@ -660,46 +729,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510784922942</updated>
-      <workItem from="1510784924494" duration="4992000" />
+      <workItem from="1510784924494" duration="15351000" />
+      <workItem from="1510883755712" duration="189000" />
+      <workItem from="1510884230390" duration="6848000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4992000" />
+    <option name="totallyTimeSpent" value="22388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1260" height="681" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -709,40 +780,41 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="resultSet.next()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1147">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <marker date="1510780195000" expanded="true" signature="1472:1548" ph="select * fro... student" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBProject">
+    <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
+            <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
+            <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
+            <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
+            <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
+            <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
+            <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
+            <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
+            <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
+            <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
+            <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
+            <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
+            <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
+            <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
+            <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,8 +828,127 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="46" />
+        <state relative-caret-position="300">
+          <caret line="22" column="38" lean-forward="false" selection-start-line="21" selection-start-column="74" selection-end-line="22" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
+            <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
+            <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
+            <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
+            <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
+            <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
+            <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
+            <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
+            <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
+            <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
+            <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
+            <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
+            <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
+            <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
+            <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Database-Project.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3892#3893#0" expanded="false" />
+            <element signature="e#3924#3925#0" expanded="false" />
+            <element signature="e#4049#4050#0" expanded="false" />
+            <element signature="e#4079#4080#0" expanded="false" />
+            <marker date="1510871082000" expanded="true" signature="1472:1548" ph="select * fro... student" />
+            <marker date="1510871082000" expanded="true" signature="3076:3094" ph="update stude... " />
+            <marker date="1510871082000" expanded="true" signature="3076:3095" ph="update stude... " />
+            <marker date="1510871082000" expanded="true" signature="3076:3132" ph="update stude... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DBProject">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Database-Project.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3892#3893#0" expanded="false" />
+            <element signature="e#3924#3925#0" expanded="false" />
+            <element signature="e#4049#4050#0" expanded="false" />
+            <element signature="e#4079#4080#0" expanded="false" />
+            <marker date="1510871082000" expanded="true" signature="1472:1548" ph="select * fro... student" />
+            <marker date="1510871082000" expanded="true" signature="3076:3094" ph="update stude... " />
+            <marker date="1510871082000" expanded="true" signature="3076:3095" ph="update stude... " />
+            <marker date="1510871082000" expanded="true" signature="3076:3132" ph="update stude... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Withdraw_Procedure.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -765,17 +956,32 @@
     <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-212">
-          <caret line="397" column="27" lean-forward="true" selection-start-line="397" selection-start-column="27" selection-end-line="397" selection-end-column="27" />
+          <caret line="468" column="64" lean-forward="false" selection-start-line="468" selection-start-column="64" selection-end-line="468" selection-end-column="64" />
           <folding>
-            <marker date="1510852248000" expanded="true" signature="2322:2406" ph="select * fro... student" />
-            <marker date="1510852248000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
-            <marker date="1510852248000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
-            <marker date="1510852248000" expanded="true" signature="10428:10781" ph="select Semes... " />
-            <marker date="1510852248000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
-            <marker date="1510852248000" expanded="true" signature="11502:11854" ph="select Semes... " />
-            <marker date="1510852248000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
-            <marker date="1510852248000" expanded="true" signature="13518:13640" ph="select Name faculty" />
+            <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
+            <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
+            <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
+            <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
+            <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
+            <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
+            <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
+            <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
+            <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
+            <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
+            <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
+            <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
+            <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
+            <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
+            <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enroll_Procedure.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="62" lean-forward="true" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>

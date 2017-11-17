@@ -188,7 +188,7 @@ public class SQLDriver {
         Scanner scanner = new Scanner( System.in );
         String infoToChange = scanner.nextLine().trim().toLowerCase();
         infoToChange = infoToChange.substring(0, 1).toUpperCase() + infoToChange.substring(1);
-        if (!(infoToChange.equals("No") || infoToChange.equals("n"))) {
+        if (!(infoToChange.equals("No") || infoToChange.equals("N"))) {
             if (infoToChange.startsWith("P")) {
                 infoToChange = "Password";
             } else {
@@ -427,8 +427,149 @@ public class SQLDriver {
      * @param user
      *              The instance of user
      */
-    private static void enrollOp(User user) {
+    private static void enrollOp(User user) throws SQLException {
+        user.refreshTime();
+        String curQuarter = user.quarter, curYear = user.year;
+        String[] nextTime = nextTime(curQuarter, curYear);
+        String nextQuarter = nextTime[0], nextYear = nextTime[1];
+        String listCourseQuery = Constants.SELECT +
+                "UoSCode, Semester, Year" +
+                Constants.FROM +
+                "lecture" +
+                Constants.WHERE +
+                "(" +
+                "Semester" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                curQuarter +
+                Constants.SINGLE_QUOTE +
+                Constants.AND +
+                "Year" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                curYear +
+                Constants.SINGLE_QUOTE + ")" +
+                Constants.OR +
+                "(" +
+                "Semester" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                nextQuarter +
+                Constants.SINGLE_QUOTE +
+                Constants.AND +
+                "Year" +
+                Constants.EQUAL +
+                Constants.SINGLE_QUOTE +
+                nextYear +
+                Constants.SINGLE_QUOTE +
+                ")";
+        String order = "order by year, semester";
+        try {
+            Statement statement = user.createStatement();
+            ResultSet resultSet = statement.executeQuery(listCourseQuery + order);
+            System.out.println("Course ID \t Quarter \t Year");
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("UoSCode") + " \t " + resultSet.getString("Semester") + " \t " + resultSet.getString("Year"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        Scanner scanner = new Scanner( System.in );
+        System.out.print("Please input the course you want to enroll: ");
+        String course = scanner.nextLine();
+        String courseQuery = listCourseQuery + Constants.AND + "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE +
+                course + Constants.SINGLE_QUOTE;
+        String semester = null, year = null;
+        try {
+            Statement statement = user.createStatement();
+            ResultSet resultSet = statement.executeQuery(courseQuery);
+            while (resultSet.next()) {
+                semester = resultSet.getString("Semester");
+                year = resultSet.getString("Year");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (isValid(user, course)) {
+            String insertQuery = "INSERT INTO transcript " +
+                    "VALUES (" + user.getId() + "," + Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE +
+                    ", " + Constants.SINGLE_QUOTE + semester + Constants.SINGLE_QUOTE + ", " + year + ", " + "null" + ")";
+            System.out.println(insertQuery);
+            String updateEnrollQuery = "update uosoffering set " + "Enrollment = Enrollment + 1 where UoSCode = " +
+                    Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE + Constants.AND + "Year = " + Constants.SINGLE_QUOTE +
+                    year + Constants.SINGLE_QUOTE + Constants.AND + "Semester = " + Constants.SINGLE_QUOTE + semester + Constants.SINGLE_QUOTE;
+            System.out.println(updateEnrollQuery);
+            Statement statement = user.createStatement();
+            statement.executeUpdate(insertQuery);
+            statement.executeUpdate(updateEnrollQuery);
+
+        } else {
+            System.out.println("");
+        }
+    }
+
+    private static boolean isValid(User user, String course) {
+        String offerQuery = Constants.SELECT + "Enrollment, MaxEnrollment" + Constants.FROM + "uosoffering" + Constants.WHERE +
+                "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE;
+        try {
+            Statement statement = user.createStatement();
+            ResultSet resultSet = statement.executeQuery(offerQuery);
+            while (resultSet.next()) {
+                int enroll = Integer.parseInt(resultSet.getString("Enrollment"));
+                int maxEnroll = Integer.parseInt(resultSet.getString("MaxEnrollment"));
+                if (enroll == maxEnroll) {
+                    return false;
+                }
+            }
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // String preQuery = Constants.SELECT + "PrereqUoSCode" + Constants.FROM + "requires" + Constants.WHERE +
+        //        "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE;
+
+        String preQuery = "select PrereqUoSCode from requires where UoSCode='COMP5045'";
+        System.out.println(preQuery);
+        try {
+            Statement statement1 = user.createStatement();
+            ResultSet resultSet1 = statement1.executeQuery(preQuery);
+            while (resultSet1.next()) {
+                String preId = resultSet1.getString("PrereqUoSCode");
+                String transcriptQuery = Constants.SELECT + "Grade" + Constants.FROM + "transcript" + Constants.WHERE +
+                        "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE + preId + Constants.SINGLE_QUOTE + Constants.AND +
+                        "StudId" + Constants.EQUAL + Constants.SINGLE_QUOTE + user.getId() + Constants.SINGLE_QUOTE;
+                Statement statement2 = user.createStatement();
+                ResultSet gradeSet = statement2.executeQuery(transcriptQuery);
+                if (!gradeSet.next()) {
+                    return false;
+                }
+                while (gradeSet.next()) {
+                    String grade = gradeSet.getString("Grade");
+                    if(grade == null || grade.equals("F")) {
+                        return false;
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
+    private static String[] nextTime(String curQuarter, String curYear) {
+        String[] res = new String[2];
+        if (Integer.parseInt(curQuarter.substring(1)) == 4) {
+            res[0] = "Q" + 1;
+            res[1] = Integer.toString(Integer.parseInt(curYear) + 1);
+        } else {
+            res[0] = "Q" + (Integer.parseInt(curQuarter.substring(1)) + 1);
+            res[1] = curYear;
+        }
+        return res;
     }
 
     /**
