@@ -2,8 +2,6 @@
  * Created by Incomplete on 11/12/17.
  */
 
-import com.sun.org.apache.regexp.internal.RE;
-
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,13 +32,7 @@ public class SQLDriver {
                 }
                 doOperation(con, choice.trim().toLowerCase(), user);
             }
-        }
-        catch(ClassNotFoundException e)
-        {
-            System.out.println("Sorry,can`t find the Driver!");
-            e.printStackTrace();
-        }
-        catch(SQLException e)
+        } catch(SQLException e)
         {
             e.printStackTrace();
         }
