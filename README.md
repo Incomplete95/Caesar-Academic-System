@@ -1,8 +1,8 @@
 # Database-Project
-EECS495 Database Project: Caesar Information Management System
+EECS495 Database Project: Caesar Student Information Management System
 
 ## Details:
-Develop a small database client that implements something along the lines of Northwestern Caesar’s academic system. It should implement the following subset of the functionality provided by Caesar:
+Develop a database client that implements something along the lines of Northwestern Caesar’s academic system. It should implement the following subset of the functionality provided by Caesar:
 
 ### a) login
 The system should first ask the students to login using their username and password. Those two input arguments must be matched against the database. When successfully logged in, students shall be directed to the STUDENT MENU screen. If username or password is incorrect, an appropriate error message shall be given.
@@ -21,3 +21,6 @@ The WITHDRAW screen shall allow logged-in students to withdraw from a course tha
 
 ### f) show personal details
 The PERSONAL DETAILS screen shall show the current personal record of the student and allow him/her to change his/her password and address. On submission, the corresponding Student record shall be updated accordingly. Students cannot change their student id or name.
+
+## Results:
+Using Java to build the system, making a uber jar file which can be directly executed once database been opened.
