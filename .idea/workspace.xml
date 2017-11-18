@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c89254c-86b9-4192-b39a-71a4bf97e6e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/SQLDriver.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/SQLDriver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/User.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQLDriver.java" afterPath="$PROJECT_DIR$/src/SQLDriver.java" />
-    </list>
+    <list default="true" id="5c89254c-86b9-4192-b39a-71a4bf97e6e5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -706,12 +701,12 @@
       <workItem from="1510784924494" duration="15351000" />
       <workItem from="1510883755712" duration="189000" />
       <workItem from="1510884230390" duration="7009000" />
-      <workItem from="1510940178665" duration="16528000" />
+      <workItem from="1510940178665" duration="16606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39077000" />
+    <option name="totallyTimeSpent" value="39155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1260" height="681" extended-state="0" />
