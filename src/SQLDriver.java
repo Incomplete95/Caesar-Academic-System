@@ -2,6 +2,8 @@
  * Created by Incomplete on 11/12/17.
  */
 
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +19,6 @@ public class SQLDriver {
             con = DriverManager.getConnection(Constants.URL,Constants.USER,Constants.PASSWORD);
             if(!con.isClosed())
                 System.out.println("Succeeded connecting to the Database!");
-            createWarning(con);
             User user = new User(tryLogin(con), con);
             showQuarterAndYear(user);
             while(true) {
@@ -32,7 +33,8 @@ public class SQLDriver {
                 }
                 doOperation(con, choice.trim().toLowerCase(), user);
             }
-        } catch(SQLException e)
+        }
+        catch(SQLException e)
         {
             e.printStackTrace();
         }
@@ -144,24 +146,24 @@ public class SQLDriver {
     private static void doOperation(Connection con, String choice, User user) {
         if (Constants.CHOICES_SET.contains(choice)) {
             try {
-               switch (choice) {
-                   case "personal details":
-                       printPersonalInfoOp(user);
-                       break;
-                   case "transcript":
-                       printTransciptsOp(user);
-                       break;
-                   case "enroll":
-                       enrollOp(user, con);
-                       break;
-                   case "withdraw":
-                       withdrawOp(user, con);
-                       break;
-                   default:
-                       con.close();
-                       System.out.println("Exit System Succeed!");
-                       System.exit(0);
-               }
+                switch (choice) {
+                    case "personal details":
+                        printPersonalInfoOp(user);
+                        break;
+                    case "transcript":
+                        printTransciptsOp(user);
+                        break;
+                    case "enroll":
+                        enrollOp(user, con);
+                        break;
+                    case "withdraw":
+                        withdrawOp(user, con);
+                        break;
+                    default:
+                        con.close();
+                        System.out.println("Exit System Succeed!");
+                        System.exit(0);
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -220,11 +222,11 @@ public class SQLDriver {
                     Constants.SINGLE_QUOTE;
             ResultSet resultSet = statement.executeQuery(genTranscriptsQuery);
             System.out.println("\nFollowing are your transcripts:");
-            System.out.println("\nCourse ID \t Grades");
+            String format = "%-20s %s\n";
+            System.out.format(format, "Course ID", "Grades");
+            //System.out.println("\nCourse ID \t Grades");
             while(resultSet.next()) {
-                System.out.println(resultSet.getString("UoSCode") +
-                    " \t " +
-                    resultSet.getString("Grade"));
+                System.out.format(format, resultSet.getString("UoSCode"), resultSet.getString("Grade"));
             }
             while(true) {
                 System.out.println("\nPlease choose your operation:");
@@ -387,35 +389,24 @@ public class SQLDriver {
             e.printStackTrace();
         }
         System.out.println("The course information:");
-        System.out.println("Course Id" +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                "Course Name" +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                "Year" +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                "Quarter" +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                "Students Enrolled" +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                "Max Enroll" +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                "Lecturer Name" +
-                Constants.TABLE_SIGN_WITH_SPACES +
+        String format = "%-10s %-45s %-10s %-10s %-20s %-20s %-20s %s\n";
+        System.out.format(format,
+                "Course Id",
+                "Course Name",
+                "Year",
+                "Quarter",
+                "Students Enrolled",
+                "Max Enroll",
+                "Lecturer Name",
                 "Grade");
-        System.out.println(courseId +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                courseName +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                year +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                semester +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                enroll +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                maxEnroll +
-                Constants.TABLE_SIGN_WITH_SPACES +
-                instructorName +
-                Constants.TABLE_SIGN_WITH_SPACES +
+        System.out.format(format,
+                courseId,
+                courseName,
+                year,
+                semester,
+                enroll,
+                maxEnroll,
+                instructorName,
                 grade);
     }
 
@@ -442,9 +433,10 @@ public class SQLDriver {
             cstmt.setString(5, nextQuarter);
             ResultSet listSet = cstmt.executeQuery();
             System.out.println("\nFollowing are the courses you can enroll:");
-            System.out.println("Course ID \t Quarter \t Year");
+            String format = "%-12s %-10s %s\n";
+            System.out.format(format, "Course ID", "Quarter", "Year");
             while (listSet.next()) {
-                System.out.println(listSet.getString("UoSCode") + " \t " + listSet.getString("Semester") + " \t " + listSet.getString("Year"));
+                System.out.format(format, listSet.getString("UoSCode"), listSet.getString("Semester"), listSet.getString("Year"));
             }
             Scanner scanner = new Scanner(System.in);
             System.out.print("\nPlease input the course ID you want to enroll: ");
@@ -549,6 +541,7 @@ public class SQLDriver {
         try {
             String course = null, year = null, quarter = null;
             while (true) {
+                createWarning(con);
                 String listWithdrawCourses = "{call listWithdrawCourses (?, ?, ?, ?, ?)}";
                 cstmt = con.prepareCall(listWithdrawCourses);
                 cstmt.setString(1, user.getId());
@@ -558,9 +551,10 @@ public class SQLDriver {
                 cstmt.setString(5, nextQuarter);
                 ResultSet resultSet = cstmt.executeQuery();
                 System.out.println("\nFollowing are the courses you can withdraw:");
-                System.out.println("Course ID \t Quarter \t Year");
+                String format = "%-12s %-10s %s\n";
+                System.out.format(format, "Course ID", "Quarter", "Year");
                 while (resultSet.next()) {
-                    System.out.println(resultSet.getString("UoSCode") + " \t " + resultSet.getString("Semester") + " \t " + resultSet.getString("Year"));
+                    System.out.format(format, resultSet.getString("UoSCode"), resultSet.getString("Semester"), resultSet.getString("Year"));
                 }
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("\nPlease input the course ID you want to withdraw: ");
