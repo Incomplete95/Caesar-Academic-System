@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c89254c-86b9-4192-b39a-71a4bf97e6e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/Constants.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/Constants.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/SQLDriver.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/SQLDriver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Database-Project/User.class" afterPath="$PROJECT_DIR$/out/production/Database-Project/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Constants.java" afterPath="$PROJECT_DIR$/src/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQLDriver.java" afterPath="$PROJECT_DIR$/src/SQLDriver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User.java" afterPath="$PROJECT_DIR$/src/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,37 +18,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SQLDriver.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SQLDriver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-212">
-              <caret line="468" column="64" lean-forward="false" selection-start-line="468" selection-start-column="64" selection-end-line="468" selection-end-column="64" />
+            <state relative-caret-position="195">
+              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
-                <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
-                <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
-                <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
-                <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
-                <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
-                <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
-                <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
-                <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
-                <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
-                <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
-                <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
-                <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
-                <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
-                <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
-                <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
+                <element signature="imports" expanded="true" />
+                <marker date="1510991041000" expanded="true" signature="2292:2376" ph="select * fro... student" />
+                <marker date="1510991041000" expanded="true" signature="7537:7692" ph="select UoSCo... transcript" />
+                <marker date="1510991041000" expanded="true" signature="9424:9702" ph="select * fro... transcript" />
+                <marker date="1510991041000" expanded="true" signature="10521:10874" ph="select Semes... " />
+                <marker date="1510991041000" expanded="true" signature="11585:12155" ph="select Enrol... uosoffering" />
+                <marker date="1510991041000" expanded="true" signature="11595:11947" ph="select Semes... " />
+                <marker date="1510991041000" expanded="true" signature="12896:13030" ph="select UoSNa... unitofstudy" />
+                <marker date="1510991041000" expanded="true" signature="13611:13733" ph="select Name faculty" />
+                <marker date="1510991041000" expanded="true" signature="23303:23324" ph="SELECT * FRO... Warning" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enroll_Procedure.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Enroll_Procedure.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Enroll_Procedure.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="72" column="62" lean-forward="true" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
+            <state relative-caret-position="-4">
+              <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -60,18 +52,18 @@
       <file leaf-file-name="Withdraw_Procedure.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Withdraw_Procedure.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="495">
+              <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database-Project.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Database-Project.iml">
+      <file leaf-file-name="Trigger.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Trigger.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="251">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,8 +72,8 @@
       <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="295">
+              <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -90,19 +82,13 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
+            <state relative-caret-position="258">
+              <caret line="42" column="61" lean-forward="true" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
               <folding>
-                <element signature="n#!!doc" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#3892#3893#0" expanded="false" />
-                <element signature="e#3924#3925#0" expanded="false" />
-                <element signature="e#4049#4050#0" expanded="false" />
-                <element signature="e#4079#4080#0" expanded="false" />
-                <marker date="1510871082000" expanded="true" signature="1472:1548" ph="select * fro... student" />
-                <marker date="1510871082000" expanded="true" signature="3076:3094" ph="update stude... " />
-                <marker date="1510871082000" expanded="true" signature="3076:3095" ph="update stude... " />
-                <marker date="1510871082000" expanded="true" signature="3076:3132" ph="update stude... " />
+                <marker date="1510980770000" expanded="true" signature="1549:1625" ph="select * fro... student" />
+                <marker date="1510980770000" expanded="true" signature="3153:3171" ph="update stude... " />
+                <marker date="1510980770000" expanded="true" signature="3153:3172" ph="update stude... " />
+                <marker date="1510980770000" expanded="true" signature="3153:3209" ph="update stude... " />
               </folding>
             </state>
           </provider>
@@ -127,10 +113,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/User.java" />
-        <option value="$PROJECT_DIR$/src/Constants.java" />
-        <option value="$PROJECT_DIR$/src/SQLDriver.java" />
         <option value="$PROJECT_DIR$/src/Enroll_Procedure.txt" />
+        <option value="$PROJECT_DIR$/src/Withdraw_Procedure.txt" />
+        <option value="$PROJECT_DIR$/src/Trigger.txt" />
+        <option value="$PROJECT_DIR$/src/Constants.java" />
+        <option value="$PROJECT_DIR$/src/User.java" />
+        <option value="$PROJECT_DIR$/src/SQLDriver.java" />
       </list>
     </option>
   </component>
@@ -161,36 +149,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Database-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Database-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Database-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Database-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -205,6 +164,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -731,12 +705,13 @@
       <updated>1510784922942</updated>
       <workItem from="1510784924494" duration="15351000" />
       <workItem from="1510883755712" duration="189000" />
-      <workItem from="1510884230390" duration="6848000" />
+      <workItem from="1510884230390" duration="7009000" />
+      <workItem from="1510940178665" duration="16528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22388000" />
+    <option name="totallyTimeSpent" value="39077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1260" height="681" extended-state="0" />
@@ -745,12 +720,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24183007" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -768,7 +744,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -796,24 +771,83 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7020">
+          <caret line="468" column="64" lean-forward="false" selection-start-line="468" selection-start-column="64" selection-end-line="468" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1510991041000" expanded="true" signature="2292:2376" ph="select * fro... student" />
+            <marker date="1510991041000" expanded="true" signature="7537:7692" ph="select UoSCo... transcript" />
+            <marker date="1510991041000" expanded="true" signature="9424:9702" ph="select * fro... transcript" />
+            <marker date="1510991041000" expanded="true" signature="10521:10874" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="11585:12155" ph="select Enrol... uosoffering" />
+            <marker date="1510991041000" expanded="true" signature="11595:11947" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="12896:13030" ph="select UoSNa... unitofstudy" />
+            <marker date="1510991041000" expanded="true" signature="13611:13733" ph="select Name faculty" />
+            <marker date="1510991041000" expanded="true" signature="23303:23324" ph="SELECT * FRO... Warning" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Withdraw_Procedure.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Database-Project.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
+          <folding>
+            <marker date="1510980770000" expanded="true" signature="1549:1625" ph="select * fro... student" />
+            <marker date="1510980770000" expanded="true" signature="3153:3171" ph="update stude... " />
+            <marker date="1510980770000" expanded="true" signature="3153:3172" ph="update stude... " />
+            <marker date="1510980770000" expanded="true" signature="3153:3209" ph="update stude... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enroll_Procedure.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="62" lean-forward="true" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
-            <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
-            <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
-            <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
-            <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
-            <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
-            <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
-            <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
-            <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
-            <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
-            <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
-            <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
-            <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
-            <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
-            <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
+            <element signature="imports" expanded="true" />
+            <marker date="1510991041000" expanded="true" signature="2292:2376" ph="select * fro... student" />
+            <marker date="1510991041000" expanded="true" signature="7537:7692" ph="select UoSCo... transcript" />
+            <marker date="1510991041000" expanded="true" signature="9424:9702" ph="select * fro... transcript" />
+            <marker date="1510991041000" expanded="true" signature="10521:10874" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="11585:12155" ph="select Enrol... uosoffering" />
+            <marker date="1510991041000" expanded="true" signature="11595:11947" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="12896:13030" ph="select UoSNa... unitofstudy" />
+            <marker date="1510991041000" expanded="true" signature="13611:13733" ph="select Name faculty" />
+            <marker date="1510991041000" expanded="true" signature="23303:23324" ph="SELECT * FRO... Warning" />
           </folding>
         </state>
       </provider>
@@ -839,21 +873,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
-            <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
-            <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
-            <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
-            <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
-            <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
-            <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
-            <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
-            <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
-            <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
-            <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
-            <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
-            <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
-            <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
-            <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
+            <element signature="imports" expanded="true" />
+            <marker date="1510991041000" expanded="true" signature="2292:2376" ph="select * fro... student" />
+            <marker date="1510991041000" expanded="true" signature="7537:7692" ph="select UoSCo... transcript" />
+            <marker date="1510991041000" expanded="true" signature="9424:9702" ph="select * fro... transcript" />
+            <marker date="1510991041000" expanded="true" signature="10521:10874" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="11585:12155" ph="select Enrol... uosoffering" />
+            <marker date="1510991041000" expanded="true" signature="11595:11947" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="12896:13030" ph="select UoSNa... unitofstudy" />
+            <marker date="1510991041000" expanded="true" signature="13611:13733" ph="select Name faculty" />
+            <marker date="1510991041000" expanded="true" signature="23303:23324" ph="SELECT * FRO... Warning" />
           </folding>
         </state>
       </provider>
@@ -879,16 +908,10 @@
         <state relative-caret-position="1395">
           <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3892#3893#0" expanded="false" />
-            <element signature="e#3924#3925#0" expanded="false" />
-            <element signature="e#4049#4050#0" expanded="false" />
-            <element signature="e#4079#4080#0" expanded="false" />
-            <marker date="1510871082000" expanded="true" signature="1472:1548" ph="select * fro... student" />
-            <marker date="1510871082000" expanded="true" signature="3076:3094" ph="update stude... " />
-            <marker date="1510871082000" expanded="true" signature="3076:3095" ph="update stude... " />
-            <marker date="1510871082000" expanded="true" signature="3076:3132" ph="update stude... " />
+            <marker date="1510980770000" expanded="true" signature="1549:1625" ph="select * fro... student" />
+            <marker date="1510980770000" expanded="true" signature="3153:3171" ph="update stude... " />
+            <marker date="1510980770000" expanded="true" signature="3153:3172" ph="update stude... " />
+            <marker date="1510980770000" expanded="true" signature="3153:3209" ph="update stude... " />
           </folding>
         </state>
       </provider>
@@ -910,6 +933,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Trigger.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enroll_Procedure.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="42" column="61" lean-forward="true" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="61" />
+          <folding>
+            <marker date="1510980770000" expanded="true" signature="1549:1625" ph="select * fro... student" />
+            <marker date="1510980770000" expanded="true" signature="3153:3171" ph="update stude... " />
+            <marker date="1510980770000" expanded="true" signature="3153:3172" ph="update stude... " />
+            <marker date="1510980770000" expanded="true" signature="3153:3209" ph="update stude... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Database-Project.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -918,70 +978,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="98" column="81" lean-forward="false" selection-start-line="98" selection-start-column="81" selection-end-line="98" selection-end-column="81" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3892#3893#0" expanded="false" />
-            <element signature="e#3924#3925#0" expanded="false" />
-            <element signature="e#4049#4050#0" expanded="false" />
-            <element signature="e#4079#4080#0" expanded="false" />
-            <marker date="1510871082000" expanded="true" signature="1472:1548" ph="select * fro... student" />
-            <marker date="1510871082000" expanded="true" signature="3076:3094" ph="update stude... " />
-            <marker date="1510871082000" expanded="true" signature="3076:3095" ph="update stude... " />
-            <marker date="1510871082000" expanded="true" signature="3076:3132" ph="update stude... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Withdraw_Procedure.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="495">
+          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SQLDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-212">
-          <caret line="468" column="64" lean-forward="false" selection-start-line="468" selection-start-column="64" selection-end-line="468" selection-end-column="64" />
+        <state relative-caret-position="195">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
-            <marker date="1510901764000" expanded="true" signature="2322:2406" ph="select * fro... student" />
-            <marker date="1510901764000" expanded="true" signature="7519:7674" ph="select UoSCo... transcript" />
-            <marker date="1510901764000" expanded="true" signature="9331:9609" ph="select * fro... transcript" />
-            <marker date="1510901764000" expanded="true" signature="10428:10781" ph="select Semes... " />
-            <marker date="1510901764000" expanded="true" signature="11492:12062" ph="select Enrol... uosoffering" />
-            <marker date="1510901764000" expanded="true" signature="11502:11854" ph="select Semes... " />
-            <marker date="1510901764000" expanded="true" signature="12803:12937" ph="select UoSNa... unitofstudy" />
-            <marker date="1510901764000" expanded="true" signature="13518:13640" ph="select Name faculty" />
-            <marker date="1510901764000" expanded="true" signature="15889:16858" ph="select UoSCo... " />
-            <marker date="1510901764000" expanded="true" signature="15889:16859" ph="select UoSCo... " />
-            <marker date="1510901764000" expanded="true" signature="18251:18511" ph="INSERT INTO transcript... " />
-            <marker date="1510901764000" expanded="true" signature="18599:18887" ph="update uosof... " />
-            <marker date="1510901764000" expanded="true" signature="19348:19452" ph="select Enrol... uosoffering" />
-            <marker date="1510901764000" expanded="true" signature="20381:20440" ph="select Prere... requires" />
-            <marker date="1510901764000" expanded="true" signature="20795:21013" ph="select Grade... transcript" />
+            <element signature="imports" expanded="true" />
+            <marker date="1510991041000" expanded="true" signature="2292:2376" ph="select * fro... student" />
+            <marker date="1510991041000" expanded="true" signature="7537:7692" ph="select UoSCo... transcript" />
+            <marker date="1510991041000" expanded="true" signature="9424:9702" ph="select * fro... transcript" />
+            <marker date="1510991041000" expanded="true" signature="10521:10874" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="11585:12155" ph="select Enrol... uosoffering" />
+            <marker date="1510991041000" expanded="true" signature="11595:11947" ph="select Semes... " />
+            <marker date="1510991041000" expanded="true" signature="12896:13030" ph="select UoSNa... unitofstudy" />
+            <marker date="1510991041000" expanded="true" signature="13611:13733" ph="select Name faculty" />
+            <marker date="1510991041000" expanded="true" signature="23303:23324" ph="SELECT * FRO... Warning" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enroll_Procedure.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="62" lean-forward="true" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>

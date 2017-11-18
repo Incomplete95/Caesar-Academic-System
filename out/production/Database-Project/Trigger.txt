@@ -1,0 +1,30 @@
+DROP TRIGGER IF EXISTS `project3-nudb`.`uosoffering_AFTER_UPDATE`;
+
+DELIMITER $$
+USE `project3-nudb`$$
+CREATE DEFINER=`root`@`localhost` TRIGGER `project3-nudb`.`uosoffering_AFTER_UPDATE` AFTER UPDATE ON `uosoffering` FOR EACH ROW
+BEGIN
+if new.Enrollment < (0.5 * new.MaxEnrollment) and new.UoSCode in (select * from Warning)
+then
+insert into Warning
+values(new.UoSCode);
+end if;
+if new.Enrollment >= (0.5 * new.MaxEnrollment)
+then
+delete from Warning where UoSCode = new.UoSCode;
+end if;
+END$$
+DELIMITER ;
+
+USE `project3-nudb`;
+DROP procedure IF EXISTS `warning`;
+
+DELIMITER $$
+USE `project3-nudb`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `warning`()
+BEGIN
+drop TABLE if exists Warning;
+CREATE TABLE Warning (courseId char(20));
+END$$
+
+DELIMITER ;
