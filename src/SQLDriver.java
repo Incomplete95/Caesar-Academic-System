@@ -2,6 +2,8 @@
  * Created by Incomplete on 11/12/17.
  */
 
+import com.sun.org.apache.regexp.internal.RE;
+
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,25 +19,29 @@ public class SQLDriver {
             con = DriverManager.getConnection(Constants.URL,Constants.USER,Constants.PASSWORD);
             if(!con.isClosed())
                 System.out.println("Succeeded connecting to the Database!");
+            createWarning(con);
             User user = new User(tryLogin(con), con);
             showQuarterAndYear(user);
             while(true) {
-                System.out.println( "Please choose your operation: " );
+                System.out.println( "\nPlease choose your operation: " );
                 printChoices();
                 Scanner scanner = new Scanner( System.in );
-                String choice = scanner.nextLine();
+                String choice = scanner.nextLine().toLowerCase();
+                for (String item : Constants.CHOICES_SET) {
+                    if (item.startsWith(choice)) {
+                        choice = item;
+                    }
+                }
                 doOperation(con, choice.trim().toLowerCase(), user);
             }
         }
         catch(ClassNotFoundException e)
         {
-            //数据库驱动类异常处理
             System.out.println("Sorry,can`t find the Driver!");
             e.printStackTrace();
         }
         catch(SQLException e)
         {
-            //数据库连接失败异常处理
             e.printStackTrace();
         }
         catch (Exception e)
@@ -67,7 +73,6 @@ public class SQLDriver {
             while (map.get(Constants.NAME) == null) {
                 Scanner scanner = new Scanner( System.in );
                 System.out.print( "Please input your name: " );
-                //studentName = scanner.nextLine();
                 String trySearchLoginName = Constants.SELECT +
                         Constants.ALL +
                         Constants.FROM +
@@ -82,7 +87,6 @@ public class SQLDriver {
                     map.put(Constants.NAME, resTrySearchLoginName.getString(Constants.NAME));
                     map.put(Constants.ID, resTrySearchLoginName.getString(Constants.ID));
                     correctPassword = resTrySearchLoginName.getString("Password");
-                    System.out.println("Welcome, " + map.get(Constants.NAME) + "!");
                 }
                 if (map.get(Constants.NAME) == null) {
                     System.out.println("Student name doesn't exist in system.");
@@ -100,7 +104,8 @@ public class SQLDriver {
             System.out.print("Please input your password: ");
             String password = scanner.nextLine();
             if (password.equals(correctPassword)) {
-                System.out.println("Login success!");
+                System.out.println("\nLogin success!");
+                System.out.println("Welcome, " + map.get(Constants.NAME) + "!");
                 return map;
             } else {
                 failCount ++;
@@ -121,7 +126,7 @@ public class SQLDriver {
      */
     private static void showQuarterAndYear(User user) {
         user.refreshTime();
-        System.out.println("Year: " + user.year);
+        System.out.println("\nYear: " + user.year);
         System.out.println("Quarter: " + user.quarter);
     }
 
@@ -130,7 +135,7 @@ public class SQLDriver {
      */
     private static void printChoices() {
         for (String choice : Constants.CHOICES_SET) {
-            System.out.println("* " + choice);
+            System.out.println("* " + choice + "(" + choice.substring(0, 1) +")");
         }
     }
 
@@ -155,10 +160,10 @@ public class SQLDriver {
                        printTransciptsOp(user);
                        break;
                    case "enroll":
-                       enrollOp(user);
+                       enrollOp(user, con);
                        break;
                    case "withdraw":
-                       withdrawOp(user);
+                       withdrawOp(user, con);
                        break;
                    default:
                        con.close();
@@ -181,7 +186,7 @@ public class SQLDriver {
      */
     private static void printPersonalInfoOp(User user) {
         user.printInfo();
-        System.out.println("Do you want to change password or address?");
+        System.out.println("\nDo you want to change password or address?");
         System.out.println("* Password(p)");
         System.out.println("* Address(a)");
         System.out.println("* No(n)");
@@ -222,14 +227,15 @@ public class SQLDriver {
                     user.getId() +
                     Constants.SINGLE_QUOTE;
             ResultSet resultSet = statement.executeQuery(genTranscriptsQuery);
-            System.out.println("Course ID \t Grades");
+            System.out.println("\nFollowing are your transcripts:");
+            System.out.println("\nCourse ID \t Grades");
             while(resultSet.next()) {
                 System.out.println(resultSet.getString("UoSCode") +
                     " \t " +
                     resultSet.getString("Grade"));
             }
             while(true) {
-                System.out.println("Please choose your operation:");
+                System.out.println("\nPlease choose your operation:");
                 System.out.println("* View details of course(v)");
                 System.out.println("* Back to previous page(b)");
                 Scanner scanner = new Scanner( System.in );
@@ -252,7 +258,7 @@ public class SQLDriver {
      *              The instance of user
      */
     private static void viewCourseDetails(User user) {
-        System.out.print("Please input the course ID you want to view(Caution: Case sensitive):");
+        System.out.print("\nPlease input the course ID you want to view(Caution: Case sensitive):");
         Scanner scanner = new Scanner( System.in );
         String courseId = scanner.nextLine().trim();
         String checkValidQuery = Constants.SELECT +
@@ -427,143 +433,107 @@ public class SQLDriver {
      * @param user
      *              The instance of user
      */
-    private static void enrollOp(User user) throws SQLException {
+    private static void enrollOp(User user, Connection con) throws SQLException {
         user.refreshTime();
         String curQuarter = user.quarter, curYear = user.year;
         String[] nextTime = nextTime(curQuarter, curYear);
         String nextQuarter = nextTime[0], nextYear = nextTime[1];
-        String listCourseQuery = Constants.SELECT +
-                "UoSCode, Semester, Year" +
-                Constants.FROM +
-                "lecture" +
-                Constants.WHERE +
-                "(" +
-                "Semester" +
-                Constants.EQUAL +
-                Constants.SINGLE_QUOTE +
-                curQuarter +
-                Constants.SINGLE_QUOTE +
-                Constants.AND +
-                "Year" +
-                Constants.EQUAL +
-                Constants.SINGLE_QUOTE +
-                curYear +
-                Constants.SINGLE_QUOTE + ")" +
-                Constants.OR +
-                "(" +
-                "Semester" +
-                Constants.EQUAL +
-                Constants.SINGLE_QUOTE +
-                nextQuarter +
-                Constants.SINGLE_QUOTE +
-                Constants.AND +
-                "Year" +
-                Constants.EQUAL +
-                Constants.SINGLE_QUOTE +
-                nextYear +
-                Constants.SINGLE_QUOTE +
-                ")";
-        String order = "order by year, semester";
-        try {
-            Statement statement = user.createStatement();
-            ResultSet resultSet = statement.executeQuery(listCourseQuery + order);
+        CallableStatement cstmt = null;
+        String course = null, year = null, quarter = null;
+        while(true) {
+            String listCourseQuery = "{call listCourses (?, ?, ?, ?, ?)}";
+            cstmt = con.prepareCall (listCourseQuery);
+            cstmt.setString(1, user.getId());
+            cstmt.setString(2, curYear);
+            cstmt.setString(3, curQuarter);
+            cstmt.setString(4, nextYear);
+            cstmt.setString(5, nextQuarter);
+            ResultSet listSet = cstmt.executeQuery();
+            System.out.println("\nFollowing are the courses you can enroll:");
             System.out.println("Course ID \t Quarter \t Year");
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("UoSCode") + " \t " + resultSet.getString("Semester") + " \t " + resultSet.getString("Year"));
+            while (listSet.next()) {
+                System.out.println(listSet.getString("UoSCode") + " \t " + listSet.getString("Semester") + " \t " + listSet.getString("Year"));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        Scanner scanner = new Scanner( System.in );
-        System.out.print("Please input the course you want to enroll: ");
-        String course = scanner.nextLine();
-        String courseQuery = listCourseQuery + Constants.AND + "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE +
-                course + Constants.SINGLE_QUOTE;
-        String semester = null, year = null;
-        try {
-            Statement statement = user.createStatement();
-            ResultSet resultSet = statement.executeQuery(courseQuery);
-            while (resultSet.next()) {
-                semester = resultSet.getString("Semester");
-                year = resultSet.getString("Year");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        if (isValid(user, course)) {
-            String insertQuery = "INSERT INTO transcript " +
-                    "VALUES (" + user.getId() + "," + Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE +
-                    ", " + Constants.SINGLE_QUOTE + semester + Constants.SINGLE_QUOTE + ", " + year + ", " + "null" + ")";
-            System.out.println(insertQuery);
-            String updateEnrollQuery = "update uosoffering set " + "Enrollment = Enrollment + 1 where UoSCode = " +
-                    Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE + Constants.AND + "Year = " + Constants.SINGLE_QUOTE +
-                    year + Constants.SINGLE_QUOTE + Constants.AND + "Semester = " + Constants.SINGLE_QUOTE + semester + Constants.SINGLE_QUOTE;
-            System.out.println(updateEnrollQuery);
-            Statement statement = user.createStatement();
-            statement.executeUpdate(insertQuery);
-            statement.executeUpdate(updateEnrollQuery);
-
-        } else {
-            System.out.println("");
-        }
-    }
-
-    private static boolean isValid(User user, String course) {
-        String offerQuery = Constants.SELECT + "Enrollment, MaxEnrollment" + Constants.FROM + "uosoffering" + Constants.WHERE +
-                "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE;
-        try {
-            Statement statement = user.createStatement();
-            ResultSet resultSet = statement.executeQuery(offerQuery);
-            while (resultSet.next()) {
-                int enroll = Integer.parseInt(resultSet.getString("Enrollment"));
-                int maxEnroll = Integer.parseInt(resultSet.getString("MaxEnrollment"));
-                if (enroll == maxEnroll) {
-                    return false;
-                }
-            }
-            resultSet.close();
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        // String preQuery = Constants.SELECT + "PrereqUoSCode" + Constants.FROM + "requires" + Constants.WHERE +
-        //        "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE + course + Constants.SINGLE_QUOTE;
-
-        String preQuery = "select PrereqUoSCode from requires where UoSCode='COMP5045'";
-        System.out.println(preQuery);
-        try {
-            Statement statement1 = user.createStatement();
-            ResultSet resultSet1 = statement1.executeQuery(preQuery);
-            while (resultSet1.next()) {
-                String preId = resultSet1.getString("PrereqUoSCode");
-                String transcriptQuery = Constants.SELECT + "Grade" + Constants.FROM + "transcript" + Constants.WHERE +
-                        "UoSCode" + Constants.EQUAL + Constants.SINGLE_QUOTE + preId + Constants.SINGLE_QUOTE + Constants.AND +
-                        "StudId" + Constants.EQUAL + Constants.SINGLE_QUOTE + user.getId() + Constants.SINGLE_QUOTE;
-                Statement statement2 = user.createStatement();
-                ResultSet gradeSet = statement2.executeQuery(transcriptQuery);
-                if (!gradeSet.next()) {
-                    return false;
-                }
-                while (gradeSet.next()) {
-                    String grade = gradeSet.getString("Grade");
-                    if(grade == null || grade.equals("F")) {
-                        return false;
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("\nPlease input the course ID you want to enroll: ");
+            course = scanner.nextLine();
+            System.out.print("Please input the year of the course you want to enroll: ");
+            year = scanner.nextLine();
+            System.out.print("Please input the quarter of the course you want to enroll: ");
+            quarter = scanner.nextLine();
+            try {
+                String validQuery = "{call isvalid (?, ?, ?, ?, ?, ?)}";
+                cstmt = con.prepareCall(validQuery);
+                cstmt.setString(1, user.getId());
+                cstmt.setString(2, course);
+                cstmt.setString(3, curYear);
+                cstmt.setString(4, curQuarter);
+                cstmt.setString(5, nextYear);
+                cstmt.setString(6, nextQuarter);
+                ResultSet resultSet = cstmt.executeQuery();
+                if (resultSet.next()) {
+                    String enrollClass = "{call enrollclass (?, ?, ?, ?)}";
+                    cstmt = con.prepareCall (enrollClass);
+                    cstmt.setString(1, user.getId());
+                    cstmt.setString(2, course);
+                    cstmt.setString(3, year);
+                    cstmt.setString(4, quarter);
+                    cstmt.executeQuery();
+                    System.out.println("Enroll course successfully!");
+                } else {
+                    String checkPreQuery = "{call needprereq (?, ?, ?, ?, ?, ?)}";
+                    CallableStatement checkPre = con.prepareCall(checkPreQuery);
+                    checkPre.setString(1, user.getId());
+                    checkPre.setString(2, course);
+                    checkPre.setString(3, curYear);
+                    checkPre.setString(4, curQuarter);
+                    checkPre.setString(5, nextYear);
+                    checkPre.setString(6, nextQuarter);
+                    ResultSet resultSet1 = checkPre.executeQuery();
+                    if (resultSet1.next()) {
+                        String listPreqQuery = "{call listprereq (?)}";
+                        CallableStatement listPreq = con.prepareCall(listPreqQuery);
+                        listPreq.setString(1, course);
+                        ResultSet resultSet2 = listPreq.executeQuery();
+                        System.out.println("The prerequisite classes you need to finish:");
+                        System.out.println("Course ID");
+                        while(resultSet2.next()) {
+                            System.out.println(resultSet2.getString("PrereqUoSCode"));
+                        }
+                    } else {
+                        System.out.println("The course you select is not valid, please reselect a new course.");
                     }
                 }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+            finally {
+                cstmt.close();
+            }
+            System.out.println("\nDo you want to continue withdrawing courses? (Y/N)");
+            if (scanner.nextLine().trim().toLowerCase().equals("n")) {
+                break;
+            }
         }
-
-        return true;
     }
 
+    /**
+     * Get the next quarter and year
+     *
+     * @param curQuarter
+     *              The current quarter
+     * @param curYear
+     *              The current year
+     * @return
+     *              The String storing the next quarter and year
+     */
     private static String[] nextTime(String curQuarter, String curYear) {
         String[] res = new String[2];
         if (Integer.parseInt(curQuarter.substring(1)) == 4) {
             res[0] = "Q" + 1;
+            res[1] = Integer.toString(Integer.parseInt(curYear));
+        } else if (Integer.parseInt(curQuarter.substring(1)) == 1) {
+            res[0] = "Q" + 2;
             res[1] = Integer.toString(Integer.parseInt(curYear) + 1);
         } else {
             res[0] = "Q" + (Integer.parseInt(curQuarter.substring(1)) + 1);
@@ -578,7 +548,83 @@ public class SQLDriver {
      * @param user
      *              The instance of user
      */
-    private static void withdrawOp(User user) {
+    private static void withdrawOp(User user, Connection con) {
+        user.refreshTime();
+        String curQuarter = user.quarter, curYear = user.year;
+        String[] nextTime = nextTime(curQuarter, curYear);
+        String nextQuarter = nextTime[0], nextYear = nextTime[1];
+        CallableStatement cstmt = null;
+        try {
+            String course = null, year = null, quarter = null;
+            while (true) {
+                String listWithdrawCourses = "{call listWithdrawCourses (?, ?, ?, ?, ?)}";
+                cstmt = con.prepareCall(listWithdrawCourses);
+                cstmt.setString(1, user.getId());
+                cstmt.setString(2, curYear);
+                cstmt.setString(3, curQuarter);
+                cstmt.setString(4, nextYear);
+                cstmt.setString(5, nextQuarter);
+                ResultSet resultSet = cstmt.executeQuery();
+                System.out.println("\nFollowing are the courses you can withdraw:");
+                System.out.println("Course ID \t Quarter \t Year");
+                while (resultSet.next()) {
+                    System.out.println(resultSet.getString("UoSCode") + " \t " + resultSet.getString("Semester") + " \t " + resultSet.getString("Year"));
+                }
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("\nPlease input the course ID you want to withdraw: ");
+                course = scanner.nextLine();
+                System.out.print("Please input the year of the course you want to withdraw: ");
+                year = scanner.nextLine();
+                System.out.print("Please input the quarter of the course you want to withdraw: ");
+                quarter = scanner.nextLine();
+                try {
+                    String withdrawCourse = "{call withdrawclass (?, ?, ?, ?)}";
+                    cstmt = con.prepareCall(withdrawCourse);
+                    cstmt.setString(1, user.getId());
+                    cstmt.setString(2, course);
+                    cstmt.setString(3, year);
+                    cstmt.setString(4, quarter);
+                    cstmt.executeQuery();
+                    System.out.println("\nWithdraw course successfully!\n");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                String selectWarning = "SELECT * FROM Warning";
+                try {
+                    Statement statement = user.createStatement();
+                    ResultSet resultSet1 = statement.executeQuery(selectWarning);
+                    while (resultSet1.next()) {
+                        System.out.println("\nWarning: the enrolled students in course " +
+                                resultSet1.getString("courseId") +
+                                " is below the 50% of max enrollment\n");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("\nDo you want to continue withdrawing courses? (Y/N)");
+                if (scanner.nextLine().trim().toLowerCase().equals("n")) {
+                    break;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
+    /**
+     * Execute CREATE TABLE Warning
+     *
+     * @param con
+     *              The database connection
+     */
+    private static void createWarning(Connection con) {
+        CallableStatement cstmt = null;
+        try {
+            String createSQL = "{call warning ()}";
+            cstmt = con.prepareCall(createSQL);
+            cstmt.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -4,15 +4,16 @@ DROP procedure IF EXISTS `listCourses`;
 
 DELIMITER $$
 USE `project3-nudb`$$
-CREATE PROCEDURE listCourses
-(IN curyear char(20),
+CREATE DEFINER=`root`@`localhost` PROCEDURE `listCourses`(IN studentId char(20),
+IN curyear char(20),
  IN curquarter char(20),
  IN nextyear char(20),
  In nextquarter char(20))
 Begin
 SELECT lec.UoSCode, lec.Semester, lec.Year
 FROM lecture lec
-WHERE (lec.Year = curyear and lec.semester = curquarter) or (lec.Year = nextyear and lec.semester = nextquarter)
+WHERE ((lec.Year = curyear and lec.semester = curquarter) or (lec.Year = nextyear and lec.semester = nextquarter)) and ((lec.UoSCode, lec.Semester, lec.Year) not in (select t.UoSCode, t.Semester, t.Year from transcript t
+where t.StudId = studentId and ((t.Semester = curquarter and t.Year = curyear) or (t.Semester = nextquarter and t.Year = nextyear))))
 order by year, semester;
 End$$
 
@@ -31,10 +32,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `isvalid`(IN studentid char(20),
 Begin
 SELECT distinct uo.UoSCode
 FROM uosoffering uo
-WHERE ((uo.semester = curquarter and uo.year = curyear) or (uo.semester = nextquarter and uo.year = nextyear)) and
-uo.MaxEnrollment > uo.Enrollment and (uo.UoSCode in (select r.UoSCode from requires r where r.UoSCode = courseid and
+WHERE uo.UoSCode = courseid and ((uo.semester = curquarter and uo.year = curyear) or (uo.semester = nextquarter and uo.year = nextyear)) and
+uo.MaxEnrollment > uo.Enrollment and ((uo.UoSCode in (select r.UoSCode from requires r where r.UoSCode = courseid and
 r.PrereqUoSCode in ( select t.UoSCode from transcript t where t.StudId = studentid and t.grade is not null and
-t.grade = 'F')));
+t.grade != 'F'))) or uo.UosCode not in (select r.UoSCode from requires r));
 End$$
 
 DELIMITER ;

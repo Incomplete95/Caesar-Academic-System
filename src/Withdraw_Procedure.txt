@@ -1,0 +1,46 @@
+USE `project3-nudb`;
+DROP procedure IF EXISTS `listWithdrawCourses`;
+
+DELIMITER $$
+USE `project3-nudb`$$
+CREATE PROCEDURE `listWithdrawCourses` (IN studentId char(20),
+IN curyear char(20),
+ IN curquarter char(20),
+ IN nextyear char(20),
+ In nextquarter char(20))
+BEGIN
+SELECT lec.UoSCode, lec.Semester, lec.Year
+FROM lecture lec
+WHERE ((lec.Year = curyear and lec.semester = curquarter) or (lec.Year = nextyear and lec.semester = nextquarter)) and lec.StudId = studentId and lec.Grade is null
+order by year, semester;
+END$$
+
+DELIMITER ;
+
+DROP procedure IF EXISTS `withdrawclass`;
+
+DELIMITER $$
+USE `project3-nudb`$$
+CREATE PROCEDURE `withdrawclass` (IN studentId char(20),
+ IN courseId char(20),
+ IN courseyear char(20),
+ IN coursesemester char(20))
+BEGIN
+start transaction;
+DELETE FROM transcript
+WHERE
+    StudId = studentId
+    AND UoSCode = courseId
+    AND Semester = coursesemester
+    AND Year = courseyear;
+UPDATE uosoffering
+SET
+    uosoffering.Enrollment = uosoffering.Enrollment - 1
+WHERE
+    uosoffering.Uoscode = courseId
+        AND uosoffering.Semester = coursesemester
+        AND uosoffering.Year = courseyear;
+commit;
+END$$
+
+DELIMITER ;

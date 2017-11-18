@@ -36,6 +36,7 @@ public class User {
         if (this.password == null) {
             completeInit();
         } else {
+            System.out.println("\nFollowing are your basic information:\n");
             System.out.println("Name: " + this.Name);
             System.out.println("ID: " + this.Id);
             System.out.println("Address: " + this.Address);
@@ -97,7 +98,6 @@ public class User {
      */
     public void changeInfo(String newInfo, String infoToChange) {
         String query = "update student set " + infoToChange + " = ? where Id = ?";
-        System.out.println(query);
         try {
             PreparedStatement preparedStmt = this.con.prepareStatement(query);
             preparedStmt.setString   (1, newInfo);
@@ -117,16 +117,6 @@ public class User {
      */
     public Statement createStatement() throws SQLException {
         return this.con.createStatement();
-    }
-
-    /**
-     * Getter method for name
-     *
-     * @return
-     *              User's name
-     */
-    public String getName() {
-        return this.Name;
     }
 
     /**
